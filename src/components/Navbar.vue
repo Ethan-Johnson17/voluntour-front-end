@@ -42,7 +42,7 @@ function toggleTheme() {
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img class="logo" src="../assets/img/2024NewLogoNoBG.png" alt="Voluntour logo with hands holding a globe">
+        <img class="logo" src="../../public/img/2024NewLogoNoBG.png" alt="Voluntour logo with hands holding a globe">
         <!-- <h1>Impact<span>.</span></h1> -->
       </a>
       <nav id="navbar" class="navbar">
