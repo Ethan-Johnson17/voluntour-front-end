@@ -125,6 +125,7 @@ export default {
     fetchData() {
       // this.error = this.personalDetail = null;
       this.loading = true;
+      // @ts-ignore
       sanity.fetch(query).then(
         (projects) => {
           projects.forEach(project => {

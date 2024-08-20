@@ -2,6 +2,7 @@
 import { AppState } from './AppState'
 // @ts-ignore
 import Navbar from './components/Navbar.vue'
+import Email from './components/Email.vue'
 
 
 </script>

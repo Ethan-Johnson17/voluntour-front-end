@@ -5,7 +5,7 @@
 <template>
   <main id="main">
     <section id="hero" class="hero">
-      <img src="../../public/img/DR1.jpg" class="img-fluid mastheadImg" alt="">
+      <img src="../assets/img/DR1.jpg" class="img-fluid mastheadImg" alt="">
       <div class="container position-relative">
         <div class="row gy-5" data-aos="fade-in">
           <div class="col-lg-7 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
@@ -23,7 +23,7 @@
           </div>
           <!-- TODO This image should be large enough that the above text runs onto the image -->
           <div class="col-lg-5 order-1 order-lg-2">
-            <!-- <img src="../../public/img/DR1.jpg" class="img-fluid mastheadImg" alt="" data-aos="zoom-out"
+            <!-- <img src="../assets/img/DR1.jpg" class="img-fluid mastheadImg" alt="" data-aos="zoom-out"
               data-aos-delay="100"> -->
           </div>
         </div>
@@ -79,14 +79,14 @@
 
         <div class="row gy-4 d-flex justify-content-center">
           <div class="col-12">
-            <img src="../../public/img/houseToHouse.jpg" class="img-fluid rounded-4 mb-3" alt="">
+            <img src="../assets/img/houseToHouse.jpg" class="img-fluid rounded-4 mb-3" alt="">
           </div>
           <div class="col-lg-10 fs-5 pt-5">
             <p>Following Mindy and Hans Madsen's families return from a heartwarming trip to the Dominican Republic, we
               found ourselves engaged in a conversation with our dear friends Brit and Kelsey Peterson, their family had
               recently returned from a soul-stirring volunteer trip in Peru, a venture dedicated to distributing
               wheelchairs to those desperately in need throughout the country.</p>
-            <img src="../../public/img/DR4.jpg" class="img-fluid ms-3 float-end floatImgSize rounded-4" alt="">
+            <img src="../assets/img/DR4.jpg" class="img-fluid ms-3 float-end floatImgSize rounded-4" alt="">
             <p>As we shared stories of our respective experiences, a common theme emerged: the desire to extend our good
               fortune to the communities we had encountered during our travels. Recognizing the positive impact that
               travelers could have on the lives of less fortunate individuals, we brainstormed the idea of starting an
@@ -101,7 +101,7 @@
 
             <!-- </div>
           <div class="col-lg-6"> -->
-            <!-- <img src="../../public/img/DR2.jpg" class="img-fluid rounded-4" alt=""> -->
+            <!-- <img src="../assets/img/DR2.jpg" class="img-fluid rounded-4" alt=""> -->
 
             <div class="position-relative mt-5">
               <img src="" class="img-fluid rounded-4" alt="">
@@ -1008,6 +1008,6 @@
 }
 
 .call-to-action-card {
-  background-image: url('../../public/img/DR-scenery.jpg');
+  background-image: url('../assets/img/DR-scenery.jpg');
 }
 </style>
