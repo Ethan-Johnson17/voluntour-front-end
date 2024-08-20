@@ -25,8 +25,9 @@ export default defineConfig({
   server: {
     port: 8080
   },
+  assetsInclude: ['**/*.JPG'],
 
   // NOTE If deploying to gh-pages uncomment the line below (https://vitejs.dev/config/shared-options.html#base)
-  // base: '/voluntour-front-end/'
+  base: '/voluntour-front-end/'
 })
 
