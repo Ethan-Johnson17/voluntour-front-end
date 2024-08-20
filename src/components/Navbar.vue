@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 import { loadState, saveState } from '../utils/Store.js';
+// @ts-ignore
 import Login from './Login.vue';
 
 const theme = ref(loadState('theme') || 'light')
@@ -18,34 +19,77 @@ function toggleTheme() {
 </script>
 
 <template>
-  <nav class="navbar navbar-expand-sm navbar-dark bg-dark px-3">
-    <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
-      <div class="d-flex flex-column align-items-center">
-        <img alt="logo" src="/img/cw-logo.png" height="45" />
+
+  <!-- ======= Header ======= -->
+  <section id="topbar" class="topbar d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope d-flex align-items-center"><a
+            href="mailto:contact@example.com">contact@example.com</a></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
       </div>
-    </router-link>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav me-auto">
-        <li>
-          <router-link :to="{ name: 'About' }" class="btn text-success lighten-30 selectable text-uppercase">
+      <div class="social-links d-none d-md-flex align-items-center">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </section><!-- End Top Bar -->
+
+  <header id="header" class="header d-flex align-items-center">
+
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img class="logo" src="../assets/img/2024NewLogoNoBG.png" alt="Voluntour logo with hands holding a globe">
+        <!-- <h1>Impact<span>.</span></h1> -->
+      </a>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <router-link :to="{ name: 'Home' }">
+            Home
+          </router-link>
+          <router-link :to="{ name: 'About' }">
             About
           </router-link>
-        </li>
-      </ul>
-      <!-- LOGIN COMPONENT HERE -->
-      <div>
-        <button class="btn text-light" @click="toggleTheme"
-          :title="`Enable ${theme == 'light' ? 'dark' : 'light'} theme.`">
-          <Icon :name="theme == 'light' ? 'weather-sunny' : 'weather-night'" />
-        </button>
-      </div>
-      <Login />
+          <router-link :to="{ name: 'Excursions' }">
+            Play
+          </router-link>
+          <ul>
+            <li class="dropdown">
+              <router-link :to="{ name: 'Projects' }">
+                <a href="#">
+                  <span>Projects</span>
+                  <i class="bi bi-chevron-down dropdown-indicator"></i>
+                </a>
+              </router-link>
+              <ul>
+                <router-link :to="{ name: 'Projects' }">
+                  <li>Past</li>
+                </router-link>
+                <router-link :to="{ name: 'Projects' }">
+                  <li>Upcoming</li>
+                </router-link>
+              </ul>
+            </li>
+          </ul>
+          <router-link :to="{ name: 'Blog' }">
+            <li>Blog</li>
+          </router-link>
+          <li class="ps-1"><a href="#contact">Contact</a></li>
+        </ul>
+      </nav><!-- .navbar -->
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
     </div>
-  </nav>
+  </header><!-- End Header -->
+  <!-- End Header -->
+
+
+
 </template>
 
 <style scoped>
@@ -67,5 +111,10 @@ a:hover {
   nav {
     height: 64px;
   }
+}
+
+.logo {
+  width: 200px;
+  padding: 20px 0px;
 }
 </style>

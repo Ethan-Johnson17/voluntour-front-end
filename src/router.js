@@ -17,6 +17,31 @@ const routes = [
     component: loadPage('AboutPage')
   },
   {
+    path: '/excursions',
+    name: 'Excursions',
+    component: loadPage('ExcursionsPage')
+  },
+  {
+    path: '/projects',
+    name: 'Projects',
+    component: loadPage('ProjectsPage')
+  },
+  {
+    path: '/getInvolved',
+    name: 'GetInvolved',
+    component: loadPage('GetInvolvedPage')
+  },
+  {
+    path: '/partners',
+    name: 'Partners',
+    component: loadPage('PartnersPage')
+  },
+  {
+    path: '/blog',
+    name: 'Blog',
+    component: loadPage('BlogPage'),
+  },
+  {
     path: '/account',
     name: 'Account',
     component: loadPage('AccountPage'),

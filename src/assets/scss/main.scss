@@ -1,6 +1,24 @@
+// Fonts
+$font-default: '"Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"';
+$font-primary: '"Montserrat", sans-serif';
+$font-secondary: '"Poppins", sans-serif';
+
+// Colors
+$default: #222222;
+$primary: #2b2a66;
+$secondary: #8dd3a0;
+
 @import "./_variables.scss";
 @import "./_utilities.scss";
 @import "./loaders.scss";
+@import '_general';
+@import 'header';
+@import 'nav';
+@import 'sections';
+@import 'hero';
+@import 'blog';
+@import 'footer';
+
 
 body {
   overscroll-behavior: none;
