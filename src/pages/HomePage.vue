@@ -79,7 +79,7 @@
 
         <div class="row gy-4 d-flex justify-content-center">
           <div class="col-12">
-            <img src="../assets/img/houseToHouse.jpg" class="img-fluid rounded-4 mb-3" alt="">
+            <img src="@/assets/img/houseToHouse.jpg" class="img-fluid rounded-4 mb-3" alt="">
           </div>
           <div class="col-lg-10 fs-5 pt-5">
             <p>Following Mindy and Hans Madsen's families return from a heartwarming trip to the Dominican Republic, we
