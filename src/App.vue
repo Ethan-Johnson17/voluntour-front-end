@@ -24,10 +24,11 @@ import Navbar from './components/Navbar.vue'
           <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta
             donna mare fermentum iaculis eu non diam phasellus.</p>
           <div class="social-links d-flex mt-4">
-            <a href="#" class="twitter"><i class="mdi mdi-twitter"></i></a>
-            <a href="#" class="facebook"><i class="mdi mdi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="mdi mdi-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="mdi mdi-linkedin"></i></a>
+            <a href="https://twitter.com/volun_tour" class="twitter"><i class="mdi mdi-twitter"></i></a>
+            <a href="https://www.facebook.com/groups/voluntouring/" class="facebook"><i
+                class="mdi mdi-facebook"></i></a>
+            <!-- <a href="#" class="instagram"><i class="mdi mdi-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="mdi mdi-linkedin"></i></a> -->
           </div>
         </div>
 
@@ -56,11 +57,10 @@ import Navbar from './components/Navbar.vue'
         <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
           <h4>Contact Us</h4>
           <p>
-            A108 Adam Street <br>
-            New York, NY 535022<br>
-            United States <br><br>
-            <strong>Phone:</strong> +1 5589 55488 55<br>
-            <strong>Email:</strong> info@example.com<br>
+            2550 E Quail Run Road <br>
+            Emmett, ID 83617
+            <strong>Phone:</strong> +1 (208) 718-2090<br>
+            <strong>Email:</strong> service@voluntour.net<br>
           </p>
 
         </div>
