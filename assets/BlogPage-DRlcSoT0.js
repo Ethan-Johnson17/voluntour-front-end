@@ -1,4 +1,4 @@
-import{s as b}from"./sanity-DSpH5Rqu.js";import{i as y}from"./image-url.umd-CnEVf8ao.js";import{_ as x,r as k,f as w,o,a as l,b as t,e as g,t as r,F as u,g as _,h as v,n as P,i as h,w as m,p as C,d as T}from"./index-cF9PEHBv.js";const V=y(b),U=`*[_type == "project"]{
+import{s as b}from"./sanity-tiZwq1R4.js";import{i as y}from"./image-url.umd-DN5D8OFF.js";import{_ as x,r as k,f as w,o,a as l,b as t,e as g,t as r,F as u,g as _,h as v,n as P,i as h,w as m,p as C,d as T}from"./index-DlpEHdA6.js";const V=y(b),U=`*[_type == "project"]{
   location,
     startDate,
     endDate,
