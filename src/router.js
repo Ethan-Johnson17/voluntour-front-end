@@ -27,6 +27,11 @@ const routes = [
     component: loadPage('ProjectsPage')
   },
   {
+    path: '/projects/:slug',
+    name: 'ProjectDetails',
+    component: loadPage('ProjectDetailsPage')
+  },
+  {
     path: '/getInvolved',
     name: 'GetInvolved',
     component: loadPage('GetInvolvedPage')

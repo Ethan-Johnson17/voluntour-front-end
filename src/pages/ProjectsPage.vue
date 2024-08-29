@@ -32,12 +32,10 @@
         <h3>All Projects</h3>
       </div>
       <div class="col-12 pb-5 text-center" v-for="project in projects" :key="project.id">
-        <img src="https://placehold.co/1000x300" />
+        <img :src="project.aboutImage" />
         <h3 class="pt-3">{{ project.location }}</h3>
         <h5 :class="{ 'text-grey': pastProjects.includes(project) }">{{ project.startDate }}</h5>
-        <router-link :to="`/projects/${project.slug.current}`">
-          <button class="btn btn-primary">View</button>
-        </router-link>
+        <button @click="pushToDetails(project)" class="btn btn-primary">View</button>
       </div>
     </div>
     <div class="row" v-else-if="selectedTab == 'Upcoming'">
@@ -45,12 +43,18 @@
         <h3>Upcoming Projects</h3>
       </div>
       <div class="col-12 pb-5 text-center" v-for="project in upcomingProjects" :key="project.id">
-        <img src="https://placehold.co/1000x300" />
+        <img :src="project.aboutImage" />
         <h3 class="pt-3">{{ project.location }}</h3>
         <h5>{{ project.startDate }}</h5>
-        <router-link :to="`/projects/${project.slug.current}`">
-          <button class="btn btn-primary">View</button>
-        </router-link>
+        <PortableText
+    :value="[
+      /* array of portable text blocks */
+    ]"
+    :components="{
+      /* optional object of custom components to use */
+    }"
+  />
+        <button @click="pushToDetails(project)" class="btn btn-primary">View</button>
       </div>
     </div>
     <div class="row" v-else-if="selectedTab == 'Current'">
@@ -58,12 +62,10 @@
         <h3>Current Projects</h3>
       </div>
       <div class="col-12 pb-5 text-center" v-for="project in currentProjects" :key="project.id">
-        <img src="https://placehold.co/1000x300" />
+        <img :src="project.aboutImage" />
         <h3 class="pt-3">{{ project.location }}</h3>
         <h5>{{ project.startDate }}</h5>
-        <router-link :to="`/projects/${project.slug.current}`">
-          <button class="btn btn-primary">View</button>
-        </router-link>
+        <button @click="pushToDetails(project)" class="btn btn-primary">View</button>
       </div>
     </div>
     <div class="row" v-if="selectedTab == 'Past'">
@@ -71,12 +73,10 @@
         <h3>Past Projects</h3>
       </div>
       <div class="col-12 pb-5 text-center" v-for="project in pastProjects" :key="project.id">
-        <img src="https://placehold.co/1000x300" />
+        <img :src="project.aboutImage" />
         <h3 class="pt-3">{{ project.location }}</h3>
         <h5 class="text-gray">{{ project.startDate }}</h5>
-        <router-link :to="`/projects/${project.slug.current}`">
-          <button class="btn btn-primary">View</button>
-        </router-link>
+        <button @click="pushToDetails(project)" class="btn btn-primary">View</button>
       </div>
     </div>
 
@@ -89,22 +89,32 @@
 import { ref } from 'vue';
 import sanity from '../sanity.js'
 import imageUrlBuilder from "@sanity/image-url";
+import { PortableText } from '@portabletext/vue';
+import { useRouter } from 'vue-router';
+import { logger } from '@/utils/Logger.js';
+import { AppState } from '@/AppState.js';
+import { formatDate } from '@/utils/GlobalUtils.js';
 
 const imageBuilder = imageUrlBuilder(sanity);
 const query = `*[_type == "project"]{
   location,
-    startDate,
+  startDate,
     endDate,
-    aboutImage,
-    slug
+    slug,
+    details,
+    organization,
+    title,
+    availability,
+    "aboutImage": aboutImage.asset->url,
 }[0...50]`;
 let upcomingProjects = [];
 let currentProjects = [];
-let pastProjects = []
+let pastProjects = [];
 
 export default {
   name: "Blog",
   setup() {
+    const router = useRouter();
     let selectedTab = ref('')
     return {
       loading: true,
@@ -112,7 +122,18 @@ export default {
       upcomingProjects,
       currentProjects,
       pastProjects,
-      selectedTab
+      selectedTab,
+      PortableText,
+
+      pushToDetails(project) {
+      logger.log(router, project)
+      AppState.selectedProject = project
+      
+      router.push({
+            name: "ProjectDetails",
+            params: { slug: project.slug.current },
+          })
+      }
     };
   },
   created() {
@@ -129,8 +150,8 @@ export default {
       sanity.fetch(query).then(
         (projects) => {
           projects.forEach(project => {
-            project.startDate = this.formatDate(project.startDate)
-            project.endDate = this.formatDate(project.endDate)
+            project.startDate = formatDate(project.startDate)
+            project.endDate = formatDate(project.endDate)
             this.sortProjects(project)
           })
           this.loading = false;
@@ -142,11 +163,7 @@ export default {
         }
       );
     },
-    formatDate(projectDate) {
-      let date = new Date(projectDate)
-      let newDate = (date.getMonth() + 1) + '-' + (date.getDate() + 1) + '-' + (date.getFullYear().toString().substring(2, 4))
-      return newDate
-    },
+    
 
     sortProjects(project) {
       const now = new Date()
@@ -165,7 +182,8 @@ export default {
         default:
           return 'Unknown';
       }
-    }
+    },
+    
   },
 };
 </script>
