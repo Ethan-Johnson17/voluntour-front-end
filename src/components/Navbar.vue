@@ -32,7 +32,7 @@ function toggleTheme() {
         <a href="https://twitter.com/volun_tour" class="twitter"><i class="fa-brands fa-twitter"></i></a>
         <a href="https://www.facebook.com/groups/voluntouring/" class="facebook"><i
                 class="fa-brands fa-facebook"></i></a>
-        <p class="ms-4 pt-3 text-white">Registered 501(3)(c)</p>
+        <p class="ms-4 pt-3 text-white">Registered 501(c)(3)</p>
       </div>
     </div>
   </section><!-- End Top Bar -->

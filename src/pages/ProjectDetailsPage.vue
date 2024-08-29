@@ -1,23 +1,25 @@
 <template>
-  <div class="container-fluid py-3">
-    <button class="selectable btn d-flex h-50 py-0 mb-2">
-      <i class="mdi mdi-arrow-left back-arrow"></i>
-      <p class="back-arrow p-0 m-0">All Projects</p>
-    </button>
+  <button class="selectable btn d-flex h-50 py-0 mb-2" @click="router.back()">
+    <i class="mdi mdi-arrow-left back-arrow"></i>
+    <p class="back-arrow p-0 m-0">All Projects</p>
+  </button>
+  <div class="container py-3">
     <div class="row">
       <div class="col-12">
         <h2>{{ project.title }}</h2>
       </div>
       <div class="col-12 text-center">
-        <img class="img-fluid" :src="project.aboutImage" alt="An old, rundown house next to a new house.">
+        <img class="img-fluid" :src="project.aboutImage" :alt="project.title + 'project image'">
+      </div>
+      <div class="col-12 pt-3">
+        <PortableText
+          :value="project.details"
+          :components="{
+            /* optional object of custom components to use */
+          }"
+        />
       </div>
     </div>
-    <PortableText
-    :value="project.details"
-    :components="{
-      /* optional object of custom components to use */
-    }"
-  />
   </div>
 </template>
 
@@ -27,7 +29,7 @@ import sanity from '@/sanity';
 import { formatDate } from '@/utils/GlobalUtils';
 import { logger } from '@/utils/Logger';
 import { onMounted, ref } from 'vue';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import { PortableText } from '@portabletext/vue';
 
 
@@ -38,6 +40,7 @@ export default {
   setup() {
     let project = ref({});
     let route = useRoute()
+    let router = useRouter()
     let query = `*[_type == "project" && slug.current == '` + route.params.slug + `']{
       location,
       startDate,
@@ -78,6 +81,7 @@ export default {
     })
     return {
       project,
+      router,
       fetchData() { 
       // @ts-ignore
       sanity.fetch(query).then(
@@ -93,7 +97,7 @@ export default {
           // this.error = error;
         }
       );
-    },
+      },
     }
   }
 }
