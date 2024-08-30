@@ -1,4 +1,4 @@
-import{v as Pe,s as Xe}from"./index-DlpEHdA6.js";var se={exports:{}};/** @license
+import{x as Pe,v as Xe}from"./index-BBx-crdf.js";var se={exports:{}};/** @license
  * eventsource.js
  * Available under MIT License (MIT)
  * https://github.com/Yaffle/EventSource/
