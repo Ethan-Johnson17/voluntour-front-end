@@ -51,8 +51,4 @@ button {
   font-size: 16px;
 }
 
-p {
-  color: green;
-  text-align: center;
-}
 </style>

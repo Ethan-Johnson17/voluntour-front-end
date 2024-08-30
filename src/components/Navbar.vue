@@ -38,7 +38,6 @@ function toggleTheme() {
   </section><!-- End Top Bar -->
 
   <header id="header" class="header d-flex align-items-center">
-
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
@@ -75,7 +74,10 @@ function toggleTheme() {
             </li>
           </ul>
           <router-link :to="{ name: 'Blog' }">
-            <li>Blog</li>
+            <li class="mx-1">Blog</li>
+          </router-link>
+          <router-link :to="{ name: 'GetInvolved' }">
+            <li class="mx-1">Get Involved</li>
           </router-link>
           <li class="ps-1"><a href="#contact">Contact</a></li>
         </ul>

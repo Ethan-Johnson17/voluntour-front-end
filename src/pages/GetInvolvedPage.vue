@@ -1,8 +1,71 @@
 <template>
-  <p>
-
-  </p>
-</template>
+  <div class="container p-5">
+    <div class="row d-flex justify-content-center">
+      <div class="col-9 text-center">
+        <h2 class="fs-1">Get Involved: 3 Ways to Help</h2>
+      </div>
+      <div class="col-9">  
+        <p class="py-3 text-center">
+          Voluntour is dedicated to providing food, housing, education, and other essential resources to individuals in need. As a nonprofit organization, our mission is to create a supportive community where everyone has access to the basic necessities of life. We can't achieve this without the help of compassionate individuals like you. Here are three impactful ways you can support Voluntour and make a real difference in the lives of those we serve.
+        </p>
+      </div>
+      <div class="col-9 text-center">
+        <img src="https://static.wixstatic.com/media/fd764d_8aa9544b19c94b9cbfcecbe9a6e5c07f~mv2.png/v1/fill/w_394,h_375,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/fd764d_8aa9544b19c94b9cbfcecbe9a6e5c07f~mv2.png" alt="">
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="col-8">
+        <h4 class="mt-2">1. Volunteering Your Time and Skills</h4>
+        <p>
+          One of the most valuable contributions you can make to Voluntour is volunteering your time and expertise. Our volunteers are the backbone of our organization, helping us to operate smoothly and reach more people in need. Whether you can spare a few hours a week or commit to a more regular schedule, your time is invaluable.
+          <ul>
+            <li>Daily Operations: Assist with preparing and distributing food, organizing donations, or helping out in our education programs.</li>
+            <li>Special Events: Join us during fundraising events, community outreach programs, or seasonal initiatives like holiday meal distributions.</li>
+            <li>Professional Services: If you have specialized skills such as marketing, IT, legal expertise, or graphic design, consider offering your services pro bono to help us enhance our operations and outreach efforts.</li>
+          </ul>
+          By volunteering with Voluntour, you not only provide direct support to those in need but also gain a sense of fulfillment and community connection.
+        </p>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="col-8">
+        <h4 class="mt-2">2. Donating Money or Resources</h4>
+        <p>
+          Financial contributions are essential for the sustainability of Voluntour. Your donations help us purchase food, maintain housing facilities, provide educational materials, and cover operational costs. There are several ways to contribute financially:
+          <ul>
+            <li>One-Time Donations: A single donation, no matter the size, can make a significant impact.</li>
+            <li>Recurring Contributions: Setting up a monthly donation helps us plan and allocate resources more effectively.</li>
+            <li>Fundraising Events: Participate in or sponsor our fundraising events, where the proceeds go directly to supporting our programs.</li>
+          </ul>
+          In addition to monetary donations, you can also donate resources. Items such as non-perishable food, school supplies, clothing, and household goods are always in high demand. These donations go directly to those who need them most, ensuring they have the essentials to lead a better life.
+        </p>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="col-8">
+        <h4 class="mt-2">3. Advocacy and Awareness</h4>
+        <p>
+          Spreading the word about Voluntour’s mission and work is another powerful way to help. By raising awareness, you can attract more supporters and resources, amplifying our impact.
+          <ul>
+            <li>Social Media: Share our posts, events, and updates on your social media platforms to reach a wider audience. Use hashtags and engage with our content to boost visibility.</li>
+            <li>Word of Mouth: Talk to your friends, family, and colleagues about Voluntour. Personal recommendations are often the most effective way to garner support.</li>
+            <li>Organize Informational Sessions: Host a gathering or a virtual meeting to inform others about our work and how they can get involved.</li>
+            <li>Policy Advocacy: Engage with local and national policymakers to support legislation that benefits nonprofit organizations and the communities we serve. Your voice can help drive positive change on a larger scale.</li>
+          </ul>
+          By advocating for Voluntour, you help build a stronger network of support, ensuring we can continue to provide essential services to those in need.
+        </p>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="col-8">
+        <h4 class="mt-2">Join Us in Making a Difference</h4>
+        <p>
+          Voluntour thrives on the generosity and dedication of individuals who believe in our mission. Whether you choose to volunteer, donate, or advocate, your contribution is invaluable. Together, we can create a community where everyone has access to the food, housing, education, and resources they need to thrive. Thank you for considering how you can support Voluntour and make a lasting impact on the lives of those we serve.<br>To get involved, visit our website or contact us directly. Your support means the world to us and to those who rely on our services. Let's make a difference together!
+        </p>
+      </div>
+    </div>
+  </div>
+  </template>
 
 <script>
 export default {

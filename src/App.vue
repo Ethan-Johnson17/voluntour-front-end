@@ -3,8 +3,39 @@ import { AppState } from './AppState'
 // @ts-ignore
 import Navbar from './components/Navbar.vue'
 import Email from './components/Email.vue'
+import { onMounted } from 'vue';
+import { logger } from './utils/Logger';
+import sanity from './sanity';
 
-
+const query = `*[_type == "project"]{
+  location,
+  startDate,
+    endDate,
+    slug,
+    details,
+    organization,
+    title,
+    availability,
+    "aboutImage": aboutImage.asset->url,
+}[0...50]`;
+onMounted(async() => {
+  await sanity.fetch(query).then(
+    (projects) => {
+          AppState.projects = projects
+          // projects.forEach(project => {
+          //   const now = new Date()
+          //   const startDate = new Date(project.startDate);
+          //   const endDate = new Date(project.endDate);
+          //   if ((startDate <= now && endDate >= now) || (startDate > now)) {
+          //     AppState.projects.push(project)
+          //   }
+          // })
+        },
+        (error) => {
+          // error = error;
+        }
+      );
+})
 </script>
 
 <template>

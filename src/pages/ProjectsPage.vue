@@ -20,7 +20,7 @@
           </li>
         </ul>
       </div>
-      <div class="col-12">
+      <div class="col-12 text-center">
         <p class="sm-text">
           Voluntour currently has
           <strong>{{ projects.length }}</strong> projects available:
@@ -33,7 +33,8 @@
       </div>
       <div class="col-12 pb-5 text-center" v-for="project in projects" :key="project.id">
         <img :src="project.aboutImage" />
-        <h3 class="pt-3">{{ project.location }}</h3>
+        <h3 class="pt-3">{{ project.title }}</h3>
+        <h5 class="pt-3">{{ project.location }}</h5>
         <h5 :class="{ 'text-grey': pastProjects.includes(project) }">{{ project.startDate }}</h5>
         <button @click="pushToDetails(project)" class="btn btn-primary">View</button>
       </div>
@@ -44,7 +45,8 @@
       </div>
       <div class="col-12 pb-5 text-center" v-for="project in upcomingProjects" :key="project.id">
         <img :src="project.aboutImage" />
-        <h3 class="pt-3">{{ project.location }}</h3>
+        <h3 class="pt-3">{{ project.title }}</h3>
+        <h5 class="pt-3">{{ project.location }}</h5>
         <h5>{{ project.startDate }}</h5>
         <PortableText
     :value="[
@@ -63,7 +65,8 @@
       </div>
       <div class="col-12 pb-5 text-center" v-for="project in currentProjects" :key="project.id">
         <img :src="project.aboutImage" />
-        <h3 class="pt-3">{{ project.location }}</h3>
+        <h3 class="pt-3">{{ project.title }}</h3>
+        <h5 class="pt-3">{{ project.location }}</h5>
         <h5>{{ project.startDate }}</h5>
         <button @click="pushToDetails(project)" class="btn btn-primary">View</button>
       </div>
@@ -74,7 +77,8 @@
       </div>
       <div class="col-12 pb-5 text-center" v-for="project in pastProjects" :key="project.id">
         <img :src="project.aboutImage" />
-        <h3 class="pt-3">{{ project.location }}</h3>
+        <h3 class="pt-3">{{ project.title }}</h3>
+        <h5 class="pt-3">{{ project.location }}</h5>
         <h5 class="text-gray">{{ project.startDate }}</h5>
         <button @click="pushToDetails(project)" class="btn btn-primary">View</button>
       </div>
@@ -110,15 +114,16 @@ const query = `*[_type == "project"]{
 let upcomingProjects = [];
 let currentProjects = [];
 let pastProjects = [];
+let projects = AppState.projects
 
 export default {
   name: "Blog",
   setup() {
     const router = useRouter();
-    let selectedTab = ref('')
+    let selectedTab = ref('All')
     return {
       loading: true,
-      projects: [],
+      projects,
       upcomingProjects,
       currentProjects,
       pastProjects,
@@ -138,6 +143,7 @@ export default {
   },
   created() {
     this.fetchData();
+    logger.log(projects)
   },
   methods: {
     imageUrlFor(source) {
@@ -146,22 +152,30 @@ export default {
     fetchData() {
       // this.error = this.personalDetail = null;
       this.loading = true;
-      // @ts-ignore
-      sanity.fetch(query).then(
-        (projects) => {
-          projects.forEach(project => {
-            project.startDate = formatDate(project.startDate)
-            project.endDate = formatDate(project.endDate)
-            this.sortProjects(project)
-          })
-          this.loading = false;
-          this.projects = projects;
-          this.selectedTab = 'All'
-        },
-        (error) => {
-          // this.error = error;
-        }
-      );
+      if (AppState.projects.length > 1) {
+        AppState.projects.forEach(project => {
+          project.startDate = formatDate(project.startDate)
+          project.endDate = formatDate(project.endDate)
+          this.sortProjects(project)
+        })
+      } else {
+        // @ts-ignore
+        sanity.fetch(query).then(
+          (projects) => {
+            projects.forEach(project => {
+              project.startDate = formatDate(project.startDate)
+              project.endDate = formatDate(project.endDate)
+              this.sortProjects(project)
+            })
+            this.loading = false;
+            this.projects = projects;
+            this.selectedTab = 'All'
+          },
+          (error) => {
+            // this.error = error;
+          }
+        );
+      }
     },
     
 
