@@ -1,4 +1,4 @@
-import{_,r as m,k as f,m as g,q as p,A as n,l,s as u,f as h,o as v,a as D,b as e,t as b,i as j,F as P}from"./index-BBx-crdf.js";import{v as x,f as c}from"./GlobalUtils-D8yp7CaD.js";const y={components:{PortableText:x},setup(){let s=m({}),r=f(),i=g(),a=`*[_type == "project" && slug.current == '`+r.params.slug+`']{
+import{_,r as m,k as f,m as g,q as p,A as n,l,s as u,f as h,o as v,a as D,b as e,t as b,i as j,F as P}from"./index-B63aHYVF.js";import{v as x,f as c}from"./GlobalUtils-RTtlYDsE.js";const y={components:{PortableText:x},setup(){let s=m({}),r=f(),i=g(),a=`*[_type == "project" && slug.current == '`+r.params.slug+`']{
       location,
       startDate,
       endDate,
