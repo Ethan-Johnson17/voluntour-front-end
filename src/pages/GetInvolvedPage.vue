@@ -1,7 +1,7 @@
 <template>
-  <div class="container p-5">
+  <div class="container py-5 px-2">
     <div class="row d-flex justify-content-center">
-      <div class="col-9 text-center">
+      <div class="col-10 text-center">
         <h2 class="fs-1">Get Involved: 3 Ways to Help</h2>
       </div>
       <div class="col-9">  

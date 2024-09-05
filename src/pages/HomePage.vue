@@ -131,7 +131,6 @@
           <p>Aperiam dolorum et et wuia molestias qui eveniet numquam nihil porro incidunt dolores placeat sunt id nobis
             omnis tiledo stran delop</p>
         </div>
-
         <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-4 col-md-6 px-0" v-for="project in projects" :key="project.id" >
             <card :project="project"></card>
@@ -149,7 +148,7 @@
         </div>
 
         <div class="row gy-4 d-flex justify-content-center">
-          <div class="col-12">
+          <div class="col-12 text-center">
             <img src="https://drive.google.com/thumbnail?id=1TsFoVUibZQwKBJooxcVAEefOmrFWKUMV&sz=w1200" class="img-fluid rounded-4 mb-3" alt="">
           </div>
           <div class="col-lg-10 fs-5 pt-5">
@@ -556,7 +555,7 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import imageUrlBuilder from "@sanity/image-url";
 import { PortableText } from '@portabletext/vue';
 import { useRouter } from 'vue-router';
@@ -571,8 +570,11 @@ export default {
     Card
   },
   setup() {
-    let projects = AppState.projects
-    logger.log(projects[0]?.details[0]?.children[0].text)
+    let projects = computed(() => AppState.projects)
+    if (projects.value.length > 9) {
+      projects.value.slice(0, 8)
+    }
+    logger.log('missing', projects)
     return {
       projects
     }

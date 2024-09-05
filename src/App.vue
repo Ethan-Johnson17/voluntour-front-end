@@ -19,6 +19,7 @@ const query = `*[_type == "project"]{
     "aboutImage": aboutImage.asset->url,
 }[0...50]`;
 onMounted(async() => {
+  // @ts-ignore
   await sanity.fetch(query).then(
     (projects) => {
           AppState.projects = projects
@@ -48,10 +49,10 @@ onMounted(async() => {
   <footer id="footer" class="footer">
 
     <div class="container">
-      <div class="row gy-4">
+      <div class="row gy-4 d-flex justify-content-between">
         <div class="col-lg-5 col-md-12 footer-info">
           <a href="index.html" class="logo d-flex align-items-center">
-            <span>Impact</span>
+            <span>Voluntour</span>
           </a>
           <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta
             donna mare fermentum iaculis eu non diam phasellus.</p>
@@ -59,34 +60,11 @@ onMounted(async() => {
             <a href="https://twitter.com/volun_tour" class="twitter"><i class="mdi mdi-twitter"></i></a>
             <a href="https://www.facebook.com/groups/voluntouring/" class="facebook"><i
                 class="mdi mdi-facebook"></i></a>
-            <!-- <a href="#" class="instagram"><i class="mdi mdi-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="mdi mdi-linkedin"></i></a> -->
           </div>
         </div>
 
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
-          </ul>
-        </div>
 
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+        <div class="col-lg-4 col-md-12 footer-contact text-center text-md-start">
           <h4>Contact Us</h4>
           <p>
             2550 E Quail Run Road <br>
@@ -102,12 +80,12 @@ onMounted(async() => {
 
     <div class="container mt-4">
       <div class="copyright">
-        &copy; Copyright <strong><span>Impact</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>LionBold Designs</span></strong>. All Rights Reserved
       </div>
 
     </div>
 
-  </footer><!-- End Footer -->
+  </footer>
   <!-- End Footer -->
 </template>
 

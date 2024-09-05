@@ -62,6 +62,7 @@ export default {
   height: 100%;
   position: absolute;
   backface-visibility: hidden;
+  border-radius: 0%;
 }
 
 .card.front {
@@ -77,5 +78,6 @@ export default {
 }
 .card-img-top {
   height: 10rem;
+  border-radius: 0%;
 }
 </style>
